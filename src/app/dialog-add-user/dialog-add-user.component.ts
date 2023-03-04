@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from 'src/models/user.class';
-import { Observable } from 'rxjs';
-import { collection, collectionData, Firestore } from '@angular/fire/firestore/'
+import { Firestore } from '@angular/fire/firestore/'
 
 
 
@@ -24,8 +23,7 @@ export class DialogAddUserComponent {
     this.user.birthDate = this.birthDate.getTime();
     console.log('current user', this.user);
     
-    this.afs
-    .collection('users')
+    this.afs.collection('users')
     .add(this.user.toJSON());
   }
 }
